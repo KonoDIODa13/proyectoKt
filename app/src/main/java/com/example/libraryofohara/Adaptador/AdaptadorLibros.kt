@@ -14,7 +14,7 @@ class AdaptadorLibros(var libros: List<Libro>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderLibros {
         val minflater = LayoutInflater.from(parent.context)
-        // toca crear la vista
+
         val miView = minflater.inflate(R.layout.elemento_libro, parent, false)
         return ViewHolderLibros(miView)
     }
@@ -29,7 +29,6 @@ class AdaptadorLibros(var libros: List<Libro>) :
     class ViewHolderLibros(val vista: View) : ViewHolder(vista) {
         val binding = ElementoLibroBinding.bind(vista)
         fun mostrar(libro: Libro) {
-            // codigo que haya en el elemento que se va a repetir
             binding.tvTitulo.text = libro.titulo
         }
     }

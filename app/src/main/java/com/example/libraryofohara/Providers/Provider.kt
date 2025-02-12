@@ -14,7 +14,7 @@ class Provider {
         var george = Autor("George R. R. Martin", 69)
         var fantasia = Genero("Fantasia")
         var listaUsuarios = mutableListOf<Usuario>(
-            Usuario("Jaime", "jaime.gonbra1789@gmail.com", "JaiGonBra9$9"),
+            Usuario("jaime", "jaime.gonbra1789@gmail.com", "JaiGonBra9$9"),
         )
 
         @RequiresApi(Build.VERSION_CODES.O)

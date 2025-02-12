@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.libraryofohara.Views.Login
+import com.example.libraryofohara.Views.IniciarSesion
 import com.example.libraryofohara.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         btnInicioSesion= binding.btnLogin
         btnInicioSesion.setOnClickListener {
-        var intent = Intent(this,Login::class.java)
+        var intent = Intent(this,IniciarSesion::class.java)
             /*var bundle= Bundle()
             bundle.putString("texto","esto es un texto")
             intent.putExtras(bundle)

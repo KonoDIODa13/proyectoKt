@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/paguina_usuario"
+        android:icon="@drawable/pagina_usuario"
+        android:title="Página de Usuario" />
+    <item
+        android:id="@+id/biblioteca"
+        android:icon="@drawable/books"
+        android:title="Biblioteca" />
+
+</menu>
