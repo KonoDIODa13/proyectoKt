@@ -1,6 +1,7 @@
 package com.example.libraryofohara.Models
 
-class Usuario(nombre: String, gmail: String, contrasenna: String) {
+class Usuario(var nombre: String, var gmail: String, var contrasenna: String) {
+
 
 
 }
