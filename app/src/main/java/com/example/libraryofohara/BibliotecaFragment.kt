@@ -1,5 +1,7 @@
-package com.example.libraryofohara.Views.Fragments
+package com.example.libraryofohara
 
+
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -26,8 +28,7 @@ class BibliotecaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentBibliotecaBinding.inflate(layoutInflater)
+        binding = FragmentBibliotecaBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -41,6 +42,15 @@ class BibliotecaFragment : Fragment() {
     private fun iniciarRecycler() {
         recycler = binding.recyclerLibros
         recycler.layoutManager = LinearLayoutManager(context)
-        adapter = AdaptadorLibros(libros)
+        adapter = AdaptadorLibros(
+            libros,
+            { pos ->
+            var libro = libros.get(pos)
+            var intent = Intent(this.requireContext(), DetalleLibro::class.java)
+            intent.putExtra("titulo", libro.titulo)
+            startActivity(intent)
+        }
+        )
+        recycler.adapter = adapter
     }
 }

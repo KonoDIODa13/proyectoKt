@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Views.Fragments.BibliotecaFragment">
+    tools:context=".PaginaUsuario">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_libros"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>

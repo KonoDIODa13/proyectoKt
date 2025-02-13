@@ -1,4 +1,4 @@
-package com.example.libraryofohara.Views
+package com.example.libraryofohara
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,14 +9,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.libraryofohara.Models.Usuario
 import com.example.libraryofohara.Providers.Provider
-import com.example.libraryofohara.databinding.ActivityRegistroBinding
+import com.example.libraryofohara.databinding.ActivityIniciarSesionBinding
 
-class Registro : AppCompatActivity() {
-    lateinit var binding: ActivityRegistroBinding
+class IniciarSesion : AppCompatActivity() {
+    lateinit var binding: ActivityIniciarSesionBinding
     lateinit var etNombre: EditText
-    lateinit var etGmail: EditText
     lateinit var etContra: EditText
-    lateinit var btnRegistro: Button
+    lateinit var btnIniciar: Button
     var usuarios = Provider.listaUsuarios
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,13 +27,12 @@ class Registro : AppCompatActivity() {
     }
 
     private fun iniciarComponentes() {
-        binding = ActivityRegistroBinding.inflate(layoutInflater)
+        binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        btnRegistro = binding.btnRegistrarse
-        etNombre = binding.etNombreRE
-        etGmail = binding.etGmailRE
-        etContra = binding.etContraRE
-        btnRegistro.setOnClickListener {
+        btnIniciar = binding.btnIniciarSesion
+        etNombre = binding.etNombreIS
+        etContra = binding.etContraIS
+        btnIniciar.setOnClickListener {
             var resultado = compruebaTextos()
             if (resultado == 1) {
                 Toast.makeText(this, "El nombre esta vacio", Toast.LENGTH_SHORT).show()
@@ -42,12 +40,9 @@ class Registro : AppCompatActivity() {
             if (resultado == 2) {
                 Toast.makeText(this, "La contraseña esta vacia", Toast.LENGTH_SHORT).show()
             }
-            var usuario =
-                Usuario(etNombre.text.toString(), etGmail.text.toString(), etContra.text.toString())
-            var existe = registro(usuario)
-            if (!existe) {
-                usuarios.add(usuario)
-                //Toast.makeText(this, "Usuario encontrado.", Toast.LENGTH_SHORT).show()
+            var usuario = login(etNombre.text.toString(), etContra.text.toString())
+            if (usuario != null) {
+                Toast.makeText(this, "Usuario encontrado.", Toast.LENGTH_SHORT).show()
                 var intent = Intent(this, PaginaUsuario::class.java)
                 intent.putExtra("nombreUsuario", usuario.nombre)
                 startActivity(intent)
@@ -68,17 +63,15 @@ class Registro : AppCompatActivity() {
         return comprobado
     }
 
-    private fun registro(usuarioRegistro: Usuario): Boolean {
+    private fun login(nombre: String, contra: String): Usuario? {
         return try {
             usuarios.first { usuario: Usuario ->
-                usuario.nombre.equals(usuarioRegistro.nombre) &&
-                        usuario.gmail.equals(usuarioRegistro.gmail) &&
-                        usuario.contrasenna.equals(usuarioRegistro.contrasenna)
+                usuario.nombre.equals(nombre) && usuario.contrasenna.equals(
+                    contra
+                )
             }
-            false
         } catch (nsee: NoSuchElementException) {
-            true
+            null;
         }
     }
-
 }
