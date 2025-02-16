@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="fondo">#121212</color>
+    <color name="principal">#1E88E5</color>
+    <color name="secundario">#FF6D00</color>
+    <color name="icono">#00E676</color>
+    <color name="fondo_toolbar">#263238</color>
+    <color name="fondo_navegacion_inferior">#0D47A1</color>
+    <color name="fondo_card">#1C1C1C</color>
+
 </resources>

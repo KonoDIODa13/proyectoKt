@@ -45,11 +45,10 @@ class Registro : AppCompatActivity() {
             var usuario =
                 Usuario(etNombre.text.toString(), etGmail.text.toString(), etContra.text.toString())
             var existe = registro(usuario)
-            if (!existe) {
+            if (existe) {
                 usuarios.add(usuario)
-                //Toast.makeText(this, "Usuario encontrado.", Toast.LENGTH_SHORT).show()
                 var intent = Intent(this, PaginaUsuario::class.java)
-                //intent.putExtra("nombreUsuario", usuario.nombre)
+                intent.putExtra("nombreUsuario", usuario.nombre)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Usuario no encontrado.", Toast.LENGTH_SHORT).show()

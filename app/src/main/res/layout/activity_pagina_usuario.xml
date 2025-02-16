@@ -13,15 +13,17 @@
         app:titleMarginStart="32dp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/material_dynamic_primary70"
+        android:background="@color/fondo_toolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:titleTextColor="@color/principal"
         />
 
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view"
+        android:background="@color/fondo"
         android:name="com.example.libraryofohara.BibliotecaFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -39,9 +41,11 @@
         android:foregroundGravity="bottom"
         app:itemActiveIndicatorStyle="@null"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:itemIconTint="@color/icono"
+        app:itemTextColor="@color/icono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/material_dynamic_primary70"
+        android:background="@color/fondo_navegacion_inferior"
         app:menu="@menu/menu_bottom_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

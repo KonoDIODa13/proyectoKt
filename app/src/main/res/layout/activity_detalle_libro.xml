@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
     tools:context=".DetalleLibro">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarLibro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/material_dynamic_primary70"
+        android:background="@color/fondo_toolbar"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,6 +20,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/principal"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
@@ -34,6 +36,7 @@
         />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,6 +49,7 @@
         app:layout_constraintVertical_bias=".1" />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,6 +62,8 @@
         app:layout_constraintVertical_bias=".15" />
 
     <TextView
+        android:textColor="@color/white"
+
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,6 +77,7 @@
 
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/tvAutorDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,6 +89,7 @@
         app:layout_constraintVertical_bias=".1" />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/tvGeneroDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,6 +101,7 @@
         app:layout_constraintVertical_bias=".15"/>
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/tvFechaDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,6 +113,8 @@
         app:layout_constraintVertical_bias=".15"/>
 
     <Button
+        android:textColor="@color/black"
+        android:backgroundTint="@color/principal"
         android:id="@+id/btnAnnadir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -42,7 +42,6 @@ class IniciarSesion : AppCompatActivity() {
             }
             var usuario = login(etNombre.text.toString(), etContra.text.toString())
             if (usuario != null) {
-                Toast.makeText(this, "Usuario encontrado.", Toast.LENGTH_SHORT).show()
                 var intent = Intent(this, PaginaUsuario::class.java)
                 intent.putExtra("nombreUsuario", usuario.nombre)
                 startActivity(intent)
